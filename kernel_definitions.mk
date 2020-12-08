@@ -5,9 +5,8 @@ ifeq ($(KERNEL_DEFCONFIG),)
      KERNEL_DEFCONFIG := vendor/$(TARGET_BOARD_PLATFORM)-perf_defconfig
 endif
 
-TARGET_KERNEL := msm-$(TARGET_KERNEL_VERSION)
 ifeq ($(TARGET_KERNEL_SOURCE),)
-     TARGET_KERNEL_SOURCE := kernel/$(TARGET_KERNEL)
+     $(error TARGET_KERNEL_SOURCE must be defined)
 endif
 
 DTC := $(HOST_OUT_EXECUTABLES)/dtc$(HOST_EXECUTABLE_SUFFIX)
